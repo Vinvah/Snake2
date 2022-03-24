@@ -25,14 +25,24 @@ namespace WindowsFormsAppSnake2._0
 
         class Level
         {
+            public Panel panel;
             public List<Snake> snakes;
-            
+            public int xLen;
+            public int yLen;
+            public List<Square> squares;
+            public Color backColor;
+            public Color squareBackColor;
+
         }
 
 
         class Square
         {
-
+            public PictureBox pictureBox;
+            public List<Snake> snakes = new List<Snake>();
+            public List<int> snakeSegments = new List<int>();
+            public Level level;
+            public Pickup pickup = null;
         }
 
         class Snake
@@ -54,8 +64,11 @@ namespace WindowsFormsAppSnake2._0
         {
             public string name;
             public List<Color> HeadColors;
+            public List<Color> HeadEatFx;
             public List<Color> ReapeatingPattern;
+            public bool LockRepeatingInPlace= false;
             public List<Color> Tail;
+            public List<Color> TailEatFx;
             public List<Color> Trail;
         }
 

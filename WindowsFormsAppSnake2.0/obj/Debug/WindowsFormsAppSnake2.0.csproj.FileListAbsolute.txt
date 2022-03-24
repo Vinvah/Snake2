@@ -8,3 +8,13 @@ I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\WindowsF
 I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.CoreCompileInputs.cache
 I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.exe
 I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.pdb
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.exe.config
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.exe
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.pdb
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.AssemblyReference.cache
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2._0.Form1.resources
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2._0.Properties.Resources.resources
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.GenerateResource.cache
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.CoreCompileInputs.cache
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.exe
+I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.pdb
