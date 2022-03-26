@@ -27,12 +27,28 @@ namespace WindowsFormsAppSnake2._0
         {
             public Panel panel;
             public List<Snake> snakes;
-            public int xLen;
-            public int yLen;
+            public int xLen = 20; // in squares
+            public int yLen = 20; // in squares
             public List<Square> squares;
-            public Color backColor;
-            public Color squareBackColor;
-
+            public Color backColor = Color.Gray; // backColor of panel
+            public Color squareBackColor = Color.Transparent;
+            Level(Panel panel, int xLen, int yLen )
+            {
+                this.panel = panel;
+                this.xLen = xLen;
+                this.yLen = yLen;
+                Size size = new Size( this.panel.Width/xLen, this.panel.Height/yLen );
+                
+                for (int iY = 0; iY < yLen; iY++)
+                {
+                    for (int iX = 0; iX < xLen; iX++)
+                    {
+                        Square square = new Square() { level = this, x = iX, y = iY, pictureBox = new PictureBox(), };
+                        square.pictureBox.Size = size;
+                        squares.Add(square);
+                    }
+                }
+            }
         }
 
 
@@ -43,6 +59,9 @@ namespace WindowsFormsAppSnake2._0
             public List<int> snakeSegments = new List<int>();
             public Level level;
             public Pickup pickup = null;
+            public Size size;
+            public int x;
+            public int y;
         }
 
         class Snake

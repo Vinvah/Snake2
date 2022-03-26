@@ -18,3 +18,14 @@ I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\W
 I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.CoreCompileInputs.cache
 I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.exe
 I:\rbk\Elevmappar\PROG1222120\Vincent Vähäverkkomäki M AST NA 20 ABJ\Github\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.pdb
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.exe.config
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.exe
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.pdb
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.AssemblyReference.cache
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2._0.Form1.resources
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2._0.Properties.Resources.resources
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.GenerateResource.cache
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.CoreCompileInputs.cache
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.exe
+C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.pdb
