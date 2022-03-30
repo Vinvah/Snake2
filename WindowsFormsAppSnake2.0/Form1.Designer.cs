@@ -33,9 +33,8 @@ namespace WindowsFormsAppSnake2._0
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timerGameTick = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // timerGameTick
@@ -45,21 +44,20 @@ namespace WindowsFormsAppSnake2._0
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.pictureBox);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(801, 451);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox
+            // panel2
             // 
-            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(189, 59);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(394, 378);
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(77, 43);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 300);
+            this.panel2.TabIndex = 0;
             // 
             // Form1
             // 
@@ -69,10 +67,8 @@ namespace WindowsFormsAppSnake2._0
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -81,7 +77,7 @@ namespace WindowsFormsAppSnake2._0
 
         private System.Windows.Forms.Timer timerGameTick;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

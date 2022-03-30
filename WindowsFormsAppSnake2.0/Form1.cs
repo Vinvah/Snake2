@@ -20,24 +20,25 @@ namespace WindowsFormsAppSnake2._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            Level level = new Level();
+            level.panel = panel2;
+            level.Setup();
         }
 
         class Level
         {
             public Panel panel;
-            public List<Snake> snakes;
+            public List<Snake> snakes = new List<Snake>();
             public int xLen = 20; // in squares
             public int yLen = 20; // in squares
-            public List<Square> squares;
+            public List<Square> squares = new List<Square>();
             public Color backColor = Color.Gray; // backColor of panel
-            public Color squareBackColor = Color.Transparent;
-            Level(Panel panel, int xLen, int yLen )
+            public Color squareBackColor = Color.Black;
+
+            public void Setup()
             {
-                this.panel = panel;
-                this.xLen = xLen;
-                this.yLen = yLen;
-                Size size = new Size( this.panel.Width/xLen, this.panel.Height/yLen );
+                int margin = 0;
+                Size size = new Size( panel.Width/xLen-margin, panel.Height/yLen-margin );
                 
                 for (int iY = 0; iY < yLen; iY++)
                 {
@@ -45,7 +46,10 @@ namespace WindowsFormsAppSnake2._0
                     {
                         Square square = new Square() { level = this, x = iX, y = iY, pictureBox = new PictureBox(), };
                         square.pictureBox.Size = size;
+                        square.pictureBox.Location = new Point((size.Width + margin) * iX, (size.Height + margin) * iY);
+                        square.pictureBox.BackColor = backColor;
                         squares.Add(square);
+                        panel.Controls.Add(square.pictureBox);
                     }
                 }
             }
@@ -59,7 +63,6 @@ namespace WindowsFormsAppSnake2._0
             public List<int> snakeSegments = new List<int>();
             public Level level;
             public Pickup pickup = null;
-            public Size size;
             public int x;
             public int y;
         }
