@@ -34,6 +34,7 @@ namespace WindowsFormsAppSnake2._0
             public List<Square> squares = new List<Square>();
             public Color backColor = Color.Gray; // backColor of panel
             public Color squareBackColor = Color.Black;
+            public bool wrap = true;
 
             public void Setup()
             {
@@ -53,6 +54,28 @@ namespace WindowsFormsAppSnake2._0
                     }
                 }
             }
+
+            public Square GetSquare(int x, int y)
+            {
+                if (x < 0 || x >= xLen)
+                {
+                    if (wrap) 
+                    {
+                        x = xLen + x - (xLen * (x / xLen));
+                    }
+                    else { return null; }
+                }
+                if (y < 0 || y >= yLen)
+                {
+                    if (wrap) 
+                    {
+                        y = yLen + y - (yLen * (y / yLen));
+                    }
+                    else { return null; }
+                }
+                return squares[x + y * xLen];
+
+            }
         }
 
 
@@ -60,7 +83,7 @@ namespace WindowsFormsAppSnake2._0
         {
             public PictureBox pictureBox;
             public List<Snake> snakes = new List<Snake>();
-            public List<int> snakeSegments = new List<int>();
+            public List<int> snakeSegmentNrs = new List<int>();
             public Level level;
             public Pickup pickup = null;
             public int x;
@@ -70,16 +93,60 @@ namespace WindowsFormsAppSnake2._0
         class Snake
         {
             public int playerNr;
+            public Level level;
             public Snakeskin skin;
             public int startingLength = 5;
             public bool dead;
             public int length;
+            public int headx = 2;
+            public int heady = 2;
+            public string facing = "right";
             public List<Square> occupiedSquares = new List<Square>();
             public List<Keys> controlKeys = new List<Keys>() { Keys.W, Keys.S, Keys.A, Keys.D, Keys.Shift, Keys.Space }; // up, down, left, right, dash/slowmotion, use item
             public double speed = 10; // in squares/s
             public double dashSpeed = 2;
             public double slowmoSpeed = 0.5;
+
+            public void Update_Render()
+            {
+                foreach (Square square in occupiedSquares)
+                {
+                    if (square.snakeSegmentNrs[0] > 0) { square.pictureBox.BackColor = Color.AliceBlue; }
+                    else { square.pictureBox.BackColor = square.level.squareBackColor; }
+                }
+            }
+
+            public void Move_Step()
+            {
+                Square nextSquare;
+                switch (facing)
+                {
+                    case "up":
+                        nextSquare = level.GetSquare(headx, heady + 1);
+                        break;
+
+                    case "down":
+                        nextSquare = level.GetSquare(headx, heady - 1);
+                        break;
+
+                    case "left":
+                        nextSquare = level.GetSquare(headx - 1, heady);
+                        break;
+
+                    case "right":
+                        nextSquare = level.GetSquare(headx + 1, heady);
+                        break;
+                }
+                foreach (Square square in occupiedSquares)
+                {
+
+                }
+            }
             
+
+
+            
+            //public Color Read_Tile_Skin(Square square) { return Color.AliceBlue; }
         }
 
         class Snakeskin
