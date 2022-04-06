@@ -20,8 +20,10 @@ namespace WindowsFormsAppSnake2._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Level level = new Level();
-            level.panel = panel2;
+            Level level = new Level
+            {
+                panel = panel2
+            };
             level.Setup();
         }
 
@@ -61,7 +63,8 @@ namespace WindowsFormsAppSnake2._0
                 {
                     if (wrap) 
                     {
-                        x = xLen + x - (xLen * (x / xLen));
+                        if (x < 0) { x = x + xLen * (x * -1 / xLen + 1); }
+                        else { x = x - xLen * (x / xLen); }
                     }
                     else { return null; }
                 }
@@ -69,7 +72,8 @@ namespace WindowsFormsAppSnake2._0
                 {
                     if (wrap) 
                     {
-                        y = yLen + y - (yLen * (y / yLen));
+                        if (y < 0) { y = y + yLen * (y * -1 / yLen + 1); }
+                        else { y = y - yLen * (y / yLen); }
                     }
                     else { return null; }
                 }
@@ -104,9 +108,11 @@ namespace WindowsFormsAppSnake2._0
             public List<Square> occupiedSquares = new List<Square>();
             public List<Keys> controlKeys = new List<Keys>() { Keys.W, Keys.S, Keys.A, Keys.D, Keys.Shift, Keys.Space }; // up, down, left, right, dash/slowmotion, use item
             public double speed = 10; // in squares/s
-            public double dashSpeed = 2;
-            public double slowmoSpeed = 0.5;
 
+            public double dashSpeed = 2;
+            public bool dashing = false;
+            public double slowmoSpeed = 0.5;
+            public bool slowmo = false;
             public void Update_Render()
             {
                 foreach (Square square in occupiedSquares)
@@ -118,7 +124,7 @@ namespace WindowsFormsAppSnake2._0
 
             public void Move_Step()
             {
-                Square nextSquare;
+                Square nextSquare = null;
                 switch (facing)
                 {
                     case "up":
@@ -137,15 +143,35 @@ namespace WindowsFormsAppSnake2._0
                         nextSquare = level.GetSquare(headx + 1, heady);
                         break;
                 }
+                Try_Move_To_Square(nextSquare);
                 foreach (Square square in occupiedSquares)
                 {
 
                 }
             }
+            public void Try_Move_To_Square(Square square)
+            {
+                
+            }
             
+            public void Keyboard_Input_On_Press(Keys key)
+            {
+                if (key == controlKeys[0]) { facing = "up"; }
+                if (key == controlKeys[1]) { facing = "down"; }
+                if (key == controlKeys[2]) { facing = "left"; }
+                if (key == controlKeys[3]) { facing = "right"; }
+                if (key == controlKeys[4]) { dashing = true; slowmo = false; }
+                if (key == controlKeys[5]) { slowmo = true; dashing = false; }
+            }
 
 
-            
+
+            public void Keyboard_Input_On_Release(Keys key) 
+            {
+                if (key == controlKeys[4]) { dashing = false; }
+                if (key == controlKeys[5]) { slowmo = false; }
+            }
+
             //public Color Read_Tile_Skin(Square square) { return Color.AliceBlue; }
         }
 
@@ -166,5 +192,14 @@ namespace WindowsFormsAppSnake2._0
 
         }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
