@@ -29,3 +29,13 @@ C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFo
 C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.CoreCompileInputs.cache
 C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.exe
 C:\Users\Vincent\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.pdb
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.exe.config
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.exe
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\bin\Debug\WindowsFormsAppSnake2.0.pdb
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.AssemblyReference.cache
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2._0.Form1.resources
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2._0.Properties.Resources.resources
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.GenerateResource.cache
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.csproj.CoreCompileInputs.cache
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.exe
+C:\Users\eex274\Source\Repos\Snake2\WindowsFormsAppSnake2.0\obj\Debug\WindowsFormsAppSnake2.0.pdb

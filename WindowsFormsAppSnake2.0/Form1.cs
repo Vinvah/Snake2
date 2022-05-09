@@ -26,7 +26,17 @@ namespace WindowsFormsAppSnake2._0
             };
             level.Setup();
         }
+        class Profile
+        {
+            public string name = "Default";
+            public string displayName = "bob";
+            public List<Keys> keybinds = new List<Keys>() { Keys.W, Keys.S, Keys.A, Keys.D, Keys.Shift, Keys.Space }; //
+        }
 
+        class Player
+        {
+            public Profile selectedProfile = new Profile(); // default profile
+        }
         class Level
         {
             public Panel panel;
@@ -36,7 +46,7 @@ namespace WindowsFormsAppSnake2._0
             public List<Square> squares = new List<Square>();
             public Color backColor = Color.Gray; // backColor of panel
             public Color squareBackColor = Color.Black;
-            public bool wrap = true;
+            public bool wrap = false;
 
             public void Setup()
             {
@@ -87,16 +97,16 @@ namespace WindowsFormsAppSnake2._0
         {
             public PictureBox pictureBox;
             public List<Snake> snakes = new List<Snake>();
-            public List<int> snakeSegmentNrs = new List<int>();
             public Level level;
             public Pickup pickup = null;
             public int x;
             public int y;
+            public Square getSegmentNr(Snake snake) { return new Square(); }
         }
 
         class Snake
         {
-            public int playerNr;
+            public Player player;
             public Level level;
             public Snakeskin skin;
             public int startingLength = 5;
@@ -117,7 +127,7 @@ namespace WindowsFormsAppSnake2._0
             {
                 foreach (Square square in occupiedSquares)
                 {
-                    if (square.snakeSegmentNrs[0] > 0) { square.pictureBox.BackColor = Color.AliceBlue; }
+                    if (occupiedSquares.IndexOf(square) > 0) { square.pictureBox.BackColor = Color.AliceBlue; }
                     else { square.pictureBox.BackColor = square.level.squareBackColor; }
                 }
             }
@@ -143,25 +153,31 @@ namespace WindowsFormsAppSnake2._0
                         nextSquare = level.GetSquare(headx + 1, heady);
                         break;
                 }
-                Try_Move_To_Square(nextSquare);
-                foreach (Square square in occupiedSquares)
+                if (nextSquare == null) { dead = true; }
+                else { Try_Move_To_Square(nextSquare); }
+                if (occupiedSquares.Count() > length)
                 {
-
+                    foreach (Square square in occupiedSquares.GetRange(length, occupiedSquares.Count() - 1 ) )
+                    {
+                        occupiedSquares.RemoveRange(length, occupiedSquares.Count - 1);
+                    }
                 }
             }
             public void Try_Move_To_Square(Square square)
             {
-                
+                headx = square.x;
+                heady = square.y;
+                occupiedSquares.Insert(0, square);
             }
             
             public void Keyboard_Input_On_Press(Keys key)
             {
-                if (key == controlKeys[0]) { facing = "up"; }
-                if (key == controlKeys[1]) { facing = "down"; }
-                if (key == controlKeys[2]) { facing = "left"; }
-                if (key == controlKeys[3]) { facing = "right"; }
-                if (key == controlKeys[4]) { dashing = true; slowmo = false; }
-                if (key == controlKeys[5]) { slowmo = true; dashing = false; }
+                if (key == player.selectedProfile.keybinds[0] && facing != "down")  { facing = "up"; }
+                if (key == player.selectedProfile.keybinds[1] && facing != "up")    { facing = "down"; }
+                if (key == player.selectedProfile.keybinds[2] && facing != "right") { facing = "left"; }
+                if (key == player.selectedProfile.keybinds[3] && facing != "left")  { facing = "right"; }
+                if (key == player.selectedProfile.keybinds[4]) { dashing = true; slowmo = false; }
+                if (key == player.selectedProfile.keybinds[5]) { slowmo = true; dashing = false; }
             }
 
 
