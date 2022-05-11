@@ -22,7 +22,7 @@ namespace WindowsFormsAppSnake2._0
         {
             Level level = new Level
             {
-                panel = panel2
+                panel = panel1
             };
             level.Setup();
         }
