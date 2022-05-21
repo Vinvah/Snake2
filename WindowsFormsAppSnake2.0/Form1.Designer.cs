@@ -48,10 +48,6 @@ namespace WindowsFormsAppSnake2._0
             this.flowLayoutPanelLeft.SuspendLayout();
             this.SuspendLayout();
             // 
-            // timerGameTick
-            // 
-            this.timerGameTick.Interval = 50;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
