@@ -53,6 +53,7 @@ namespace WindowsFormsAppSnake2._0
         class GameSettings
         {
             public int TicksPerSecond = 80;
+            public bool Wrap = true;
 
         }
 
@@ -60,7 +61,7 @@ namespace WindowsFormsAppSnake2._0
         {
             public string name = "Default";
             public string displayName = "bob";
-            public List<Keys> keybinds = new List<Keys>() { Keys.W, Keys.S, Keys.A, Keys.D, Keys.Shift, Keys.Space }; //
+            public List<Keys> keybinds = new List<Keys>() { Keys.W, Keys.S, Keys.A, Keys.D, Keys.Space, Keys.ShiftKey }; //
         }
 
         class Player
@@ -70,6 +71,7 @@ namespace WindowsFormsAppSnake2._0
         }
         class Level
         {
+            public Game game;
             public Panel panel;
             public List<Snake> snakes = new List<Snake>();
             public int xLen = 20; // in squares
@@ -77,7 +79,7 @@ namespace WindowsFormsAppSnake2._0
             public List<Square> squares = new List<Square>();
             public Color backColor = Color.Gray; // backColor of panel
             public Color squareBackColor = Color.Gray;
-            public bool wrap = false;
+            public bool wrap = true;
 
             public Level(Panel panel)
             {
@@ -154,10 +156,12 @@ namespace WindowsFormsAppSnake2._0
             public int headx = 2;
             public int heady = 2;
             public string facing = "right";
+            //public string nextDirection = "right"; 
             public string previousSquareDirection = "left";
             public List<Square> occupiedSquares = new List<Square>();
-            public List<Keys> controlKeys = new List<Keys>() { Keys.W, Keys.S, Keys.A, Keys.D, Keys.Shift, Keys.Space }; // up, down, left, right, dash/slowmotion, use item
-            public int speed = 6; // in squares/s
+            //public List<Keys> controlKeys = new List<Keys>() { Keys.W, Keys.S, Keys.A, Keys.D, Keys.Z, Keys.Space}; // up, down, left, right, dash/slowmotion, use item
+            public int speed = 8; // in squares/s
+            public double curSpeedMod = 1;
             int ticksPerMove;
             int currentTickNr = 0;
 
@@ -172,11 +176,17 @@ namespace WindowsFormsAppSnake2._0
             }
             public void OnGameTick()
             {
+                
                 currentTickNr++;
-                if (currentTickNr >= ticksPerMove)
+                if (dashing) { curSpeedMod = dashSpeed; }
+                if (slowmo) { curSpeedMod = slowmoSpeed; }
+                if (!dashing && !slowmo) { curSpeedMod = 1; }
+                
+                int currentSpeed = (int)(ticksPerMove * curSpeedMod);
+                if (currentTickNr >= currentSpeed)
                 {
                     Move_Step();
-                    currentTickNr -= ticksPerMove;
+                    currentTickNr -= currentSpeed;
                 }
             }
 
@@ -250,8 +260,8 @@ namespace WindowsFormsAppSnake2._0
             }
             public void Keyboard_Input_On_Release(Keys key) 
             {
-                if (key == controlKeys[4]) { dashing = false; }
-                if (key == controlKeys[5]) { slowmo = false; }
+                if (key == player.selectedProfile.keybinds[4]) { dashing = false; }
+                if (key == player.selectedProfile.keybinds[5]) { slowmo = false; }
             }
 
 
@@ -283,6 +293,7 @@ namespace WindowsFormsAppSnake2._0
                 {
                     snake.Keyboard_Input_On_Press(e.KeyCode);
                 }
+                if (e.KeyCode == Keys.R) { game.levels[0].snakes.Insert(0, new Snake(game) { level = game.levels[0] }); game.players[0].snake = game.levels[0].snakes[0]; }
             }
         }
 
